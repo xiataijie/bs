@@ -9,6 +9,16 @@
   <artifactId>bs-manage</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <dependencies>
+     <dependency>
+       
+         <groupId>com.bs</groupId>
+         <artifactId>bs-common</artifactId>
+         <version>0.0.1-SNAPSHOT</version>
+     </dependency>  
+  
+  </dependencies>
+  
   <modules>
   	<module>bs-manage-bean</module>
   	<module>bs-manage-mapper</module>
