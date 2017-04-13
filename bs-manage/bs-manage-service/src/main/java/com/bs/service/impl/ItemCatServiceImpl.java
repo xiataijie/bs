@@ -39,7 +39,6 @@ public class ItemCatServiceImpl implements ItemCatService {
 			resultList.add(node);
 		}
 		return resultList;
-
 	}
 
 }
