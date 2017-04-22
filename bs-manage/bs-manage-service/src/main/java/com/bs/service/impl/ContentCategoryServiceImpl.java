@@ -66,5 +66,4 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		return ResponseResultJson.ok(contentCategory);
 	}
 
-
 }

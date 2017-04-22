@@ -16,6 +16,11 @@
 			<artifactId>bs-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.bs</groupId>
+			<artifactId>bs-manage-bean</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 			<!-- 文件上传组件 -->
 			<dependency>
 				<groupId>commons-fileupload</groupId>
