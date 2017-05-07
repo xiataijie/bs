@@ -1,4 +1,4 @@
-package dao;
+package com.bs.order.dao;
 
 public interface JedisClient {
 	

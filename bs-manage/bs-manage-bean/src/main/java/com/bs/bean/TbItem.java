@@ -4,27 +4,16 @@ import java.util.Date;
 
 public class TbItem {
     private Long id;
-
     private String title;
-
     private String sellPoint;
-
     private Long price;
-
     private Integer num;
-
     private String barcode;
-
     private String image;
-
     private Long cid;
-
     private Byte status;
-
     private Date created;
-
     private Date updated;
-
     public Long getId() {
         return id;
     }

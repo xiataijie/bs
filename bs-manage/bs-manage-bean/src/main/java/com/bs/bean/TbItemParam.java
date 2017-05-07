@@ -4,13 +4,9 @@ import java.util.Date;
 
 public class TbItemParam {
     private Long id;
-
     private Long itemCatId;
-
     private Date created;
-
     private Date updated;
-
     private String paramData;
 
     public Long getId() {

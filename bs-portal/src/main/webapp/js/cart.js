@@ -3,20 +3,20 @@ var TTCart = {
 		
 	},
 	itemNumChange : function(){
-		$(".increment").click(function(){//＋
+		$(".increment").click(function(){// ＋
 			var _thisInput = $(this).siblings("input");
 			_thisInput.val(eval(_thisInput.val()) + 1);
-			$.post("/cart/update/num/"+_thisInput.attr("itemId")+"/"+_thisInput.val() + ".action",function(data){
-				TTCart.refreshTotalPrice();
+			$.post("/cart/add/"+_thisInput.attr("itemId")+ ".html?num=1",function(data){ //post请求,调用Controller添加方法
+				TTCart.refreshTotalPrice();    //重新计算价格
 			});
 		});
-		$(".decrement").click(function(){//-
+		$(".decrement").click(function(){// -
 			var _thisInput = $(this).siblings("input");
 			if(eval(_thisInput.val()) == 1){
 				return ;
 			}
 			_thisInput.val(eval(_thisInput.val()) - 1);
-			$.post("/cart/update/num/"+_thisInput.attr("itemId")+"/"+_thisInput.val() + ".action",function(data){
+			$.post("/cart/add/"+_thisInput.attr("itemId")+".html?num=-1",function(data){
 				TTCart.refreshTotalPrice();
 			});
 		});

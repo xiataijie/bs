@@ -27,7 +27,6 @@ public class PictureServiceImpl implements PictureService {
 	private String FTP_USERNAME;
 	@Value("${FTP_PASSWORD}")
 	private String FTP_PASSWORD;
-	
 	@Override
 	public Map uploadPicture(MultipartFile uploadFile){
 		Map resultMap = new HashMap<>();
@@ -38,7 +37,6 @@ public class PictureServiceImpl implements PictureService {
 			String imagePath =new DateTime().toString("/yyyy/MM/dd");
 		    boolean result = FtpUtils.uploadFile(FTP_ADDRESS, FTP_PORT, FTP_USERNAME, FTP_PASSWORD, 
 		    		FTP_BASE_PATH,imagePath , newName, uploadFile.getInputStream());
-		    
 		    if(!result){
 		    	resultMap.put("error", 1);
 		    	resultMap.put("message", "文件上传成功");
@@ -47,14 +45,11 @@ public class PictureServiceImpl implements PictureService {
 		    resultMap.put("error", 0);
 		    resultMap.put("url", IMAGE_BASE_URL +imagePath +"/"+newName);
 		    return resultMap;
-			
 		}catch(Exception e){
 			resultMap.put("error", 1);
 		    resultMap.put("message", "文件上传发生异常");
 		    return resultMap;
 		}
-	
-
 	}
 
 

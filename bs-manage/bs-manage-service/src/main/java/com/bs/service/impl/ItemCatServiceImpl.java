@@ -19,6 +19,9 @@ public class ItemCatServiceImpl implements ItemCatService {
 	@Autowired
 	private TbItemCatMapper tbItemCatMapper;
 
+	/**
+	 * 查询商品分类信息
+	 */
 	@Override
 	public List<EUTreeNode> getItemCatList(Long parentId) throws Exception {
 		TbItemCatExample example = new TbItemCatExample();
@@ -30,7 +33,6 @@ public class ItemCatServiceImpl implements ItemCatService {
 		List<TbItemCat> list = tbItemCatMapper.selectByExample(example);
 		//把list转换成EUTreeNode 的list
 		List<EUTreeNode> resultList = new ArrayList<>();
-		
 		for(TbItemCat tbItemCat : list){
 			EUTreeNode node = new EUTreeNode();
 			node.setId(tbItemCat.getId());

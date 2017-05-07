@@ -4,19 +4,23 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
 import com.bs.bean.TbContent;
 import com.bs.bean.TbContentExample;
 import com.bs.bean.TbContentExample.Criteria;
 import com.bs.common.bean.JsonUtils;
 import com.bs.mapper.TbContentMapper;
+import com.bs.restful.dao.JedisClient;
 import com.bs.restful.service.ContentService;
-import dao.JedisClient;
+@Service
 public class ContentServiceImpl implements ContentService {
 	
 	@Autowired
 	private TbContentMapper tbContentMapper;
 	@Autowired
 	private JedisClient jedisClient;
+	
 	@Value("${INDEX_CONTENT_REDIS_KEY}")
 	private String INDEX_CONTENT_REDIS_KEY;
 	

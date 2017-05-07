@@ -221,7 +221,8 @@
 					<b></b>如果您发现商品信息不准确，欢迎纠错
 				</div>
 				<div id="item-desc" class="detail-content">
-						${itemDesc.itemDesc }
+						<%-- ${itemDesc.itemDesc } --%>
+						<!-- 商品描述 -->
 				</div>
 			</div>
 			<div class="mc hide" data-widget="tab-content" id="product-detail-2">
@@ -291,7 +292,6 @@
 		var itemId = "${item.id}";
 		//给商品规格参数tab页绑定事件
 		$("#p-con-attr").bind("click", function(){
-			
 			itemControl.getItemParam(itemId);
 		});
 		//延迟一秒加载商品描述信息

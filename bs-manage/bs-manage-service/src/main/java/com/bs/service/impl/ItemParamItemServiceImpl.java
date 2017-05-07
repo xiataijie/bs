@@ -21,7 +21,7 @@ public class ItemParamItemServiceImpl implements ItemParamItemService {
 
 	@Override
 	public String getItemParamByItemId(Long itemId) {
-		//根据商品id查询规格参数
+		        //根据商品id查询规格参数
 				TbItemParamItemExample example = new TbItemParamItemExample();
 				Criteria criteria = example.createCriteria();
 				criteria.andItemIdEqualTo(itemId);
@@ -55,7 +55,6 @@ public class ItemParamItemServiceImpl implements ItemParamItemService {
 				sb.append("</table>");
 				return sb.toString();
 			}
-
 	}
 
 	

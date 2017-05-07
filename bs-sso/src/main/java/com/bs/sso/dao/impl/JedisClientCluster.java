@@ -1,8 +1,9 @@
-package dao.impl;
+package com.bs.sso.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dao.JedisClient;
+import com.bs.sso.dao.JedisClient;
+
 import redis.clients.jedis.JedisCluster;
 
 public class JedisClientCluster implements JedisClient {

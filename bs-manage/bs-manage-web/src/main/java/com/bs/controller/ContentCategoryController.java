@@ -20,6 +20,12 @@ public class ContentCategoryController {
 
 	@Autowired
 	private ContentCategoryService  contentCategoryService;
+	
+	/**
+	 * 获取内容分类列表
+	 * @param parentId
+	 * @return
+	 */
 	@RequestMapping("/getContentCategoryList")
     @ResponseBody
 	public List<EUTreeNode> getContentCategoryList(@RequestParam(value="id",defaultValue="0")Long parentId){
@@ -27,6 +33,12 @@ public class ContentCategoryController {
 		return list;
 	}
 	
+	/**
+	 * 添加内容分类
+	 * @param parentId
+	 * @param name
+	 * @return
+	 */
 	@RequestMapping("/createContentCategory")
 	@ResponseBody
 	public ResponseResultJson createContentCategory(Long parentId, String name) {

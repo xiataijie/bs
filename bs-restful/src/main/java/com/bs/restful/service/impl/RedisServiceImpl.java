@@ -5,9 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 
 import com.bs.common.bean.ExceptionUtil;
 import com.bs.common.bean.ResponseResultJson;
+import com.bs.restful.dao.JedisClient;
 import com.bs.restful.service.RedisService;
-
-import dao.JedisClient;
 
 public class RedisServiceImpl implements RedisService {
 

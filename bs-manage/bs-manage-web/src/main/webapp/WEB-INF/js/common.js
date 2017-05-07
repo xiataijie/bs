@@ -200,12 +200,10 @@ var TT = TAOTAO = {
 					 var pd = paramData[i];
 					 html+="<li><table>";
 					 html+="<tr><td colspan=\"2\" class=\"group\">"+pd.group+"</td></tr>";
-					 
 					 for(var j in pd.params){
 						 var ps = pd.params[j];
 						 html+="<tr><td class=\"param\"><span>"+ps+"</span>: </td><td><input autocomplete=\"off\" type=\"text\"/></td></tr>";
 					 }
-					 
 					 html+="</li></table>";
 				 }
 				 html+= "</ul>";
@@ -216,6 +214,7 @@ var TT = TAOTAO = {
 			  }
 		  });
     },
+    
     getSelectionsIds : function (select){
     	var list = $(select);
     	var sels = list.datagrid("getSelections");

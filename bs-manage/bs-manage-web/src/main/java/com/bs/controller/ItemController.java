@@ -17,7 +17,12 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 
-	
+	/**
+	 * 获取商品列表
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
 	@RequestMapping("/item/getItemList")
 	@ResponseBody
 	public PageUtils getItemList(Integer page ,Integer rows){
@@ -25,13 +30,26 @@ public class ItemController {
 		return result;
 	}
 	
-	
+	/**
+	 * 添加商品信息、详情描述、规格参数
+	 * @param tbItem
+	 * @param desc
+	 * @param itemParams
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="/item/save", method=RequestMethod.POST)
 	@ResponseBody
 	public ResponseResultJson createItem(TbItem tbItem, String desc ,String itemParams) throws Exception{
 		ResponseResultJson resultJson = itemService.createItem(tbItem, desc ,itemParams);
 		return resultJson;
-		
 	}
 	
+/*	@RequestMapping(value="/item/delete/{id}", method=RequestMethod.POST)
+	@ResponseBody
+	public ResponseResultJson deleteItem() throws Exception{
+		ResponseResultJson resultJson = itemService.deleteItem();
+		return resultJson;
+	}
+	*/
 }

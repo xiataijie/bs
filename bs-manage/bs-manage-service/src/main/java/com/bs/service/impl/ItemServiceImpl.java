@@ -32,6 +32,9 @@ public class ItemServiceImpl implements ItemService {
 	@Autowired
 	private TbItemParamItemMapper tbItemParamItemMapper;
 
+	/**
+	 * 获取商品列表
+	 */
 	@Override
 	public PageUtils getItemList(int page, int rows) {
 		TbItemExample example = new TbItemExample();
@@ -44,6 +47,9 @@ public class ItemServiceImpl implements ItemService {
 		return result;
 	}
 
+	/**
+	 * 添加商品信息、商品详情、商品规格参数
+	 */
 	@Override
 	public ResponseResultJson createItem(TbItem tbItem , String desc ,String itemParams) throws Exception {
 		Long itemId =GenUtils.genItemId();
@@ -58,16 +64,20 @@ public class ItemServiceImpl implements ItemService {
 				if (result.getStatus() != 200) {
 					throw new Exception();
 				}
-				
 		//添加商品规格参数
 			result = insertItemParamItem(itemId , itemParams);
 			if(result.getStatus() !=200){
 				throw new Exception();
 			}
-				
 		return ResponseResultJson.ok();
 	}
 
+	/**
+	 * 插入商品详情
+	 * @param itemId
+	 * @param desc
+	 * @return
+	 */
 	private ResponseResultJson insertItemDesc(Long itemId, String desc) {
 		TbItemDesc itemDesc = new TbItemDesc();
 		itemDesc.setItemId(itemId);
@@ -77,7 +87,12 @@ public class ItemServiceImpl implements ItemService {
 		tbItemDescMapper.insert(itemDesc);
 		return ResponseResultJson.ok();
 	}
-	
+	/**
+	 * 插入商品规格参数
+	 * @param itemId
+	 * @param itemParam
+	 * @return
+	 */
 	private  ResponseResultJson insertItemParamItem(Long itemId, String itemParam) {
 		TbItemParamItem itemParamItem = new TbItemParamItem();
 		itemParamItem.setItemId(itemId);

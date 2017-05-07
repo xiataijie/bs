@@ -15,10 +15,8 @@ import com.bs.service.ContentCategoryService;
 
 @Service
 public class ContentCategoryServiceImpl implements ContentCategoryService {
-
 	@Autowired
 	private TbContentCategoryMapper tbContentCategoryMapper;
-	
 	@Override
 	public List<EUTreeNode> getCategoryList(long parentId) {
 		TbContentCategoryExample example = new TbContentCategoryExample();

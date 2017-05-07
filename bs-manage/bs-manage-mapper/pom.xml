@@ -13,8 +13,6 @@
     <artifactId>bs-manage-bean</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    
-    
     	<!-- Mybatis -->
 			<dependency>
 				<groupId>org.mybatis</groupId>

@@ -20,6 +20,7 @@ public class ContentServiceImpl implements ContentService {
 
 	@Value("${REST_BASE_URL}")
 	private String REST_BASE_URL;
+	
 	@Value("${REST_INDEX_AD_URL}")
 	private String REST_INDEX_AD_URL;
 
@@ -27,11 +28,12 @@ public class ContentServiceImpl implements ContentService {
 	public String getContentList() {
 		//调用服务层的服务
 				String result = HttpClientUtils.doGet(REST_BASE_URL + REST_INDEX_AD_URL);
-				//把字符串转换成TaotaoResult
+				System.out.println(result);
+				//把字符串转换成responseResult
 				try {
-					ResponseResultJson taotaoResult = ResponseResultJson.formatToList(result, TbContent.class);
+					ResponseResultJson responseResult = ResponseResultJson.formatToList(result, TbContent.class);
 					//取内容列表
-					List<TbContent> list = (List<TbContent>) taotaoResult.getData();
+					List<TbContent> list = (List<TbContent>) responseResult.getData();
 					List<Map> resultList = new ArrayList<>();
 		 			//创建一个jsp页码要求的pojo列表
 					for (TbContent tbContent : list) {
@@ -46,6 +48,7 @@ public class ContentServiceImpl implements ContentService {
 						map.put("alt", tbContent.getSubTitle());
 						resultList.add(map);
 					}
+					System.out.println(resultList);
 					return JsonUtils.objectToJson(resultList);
 				} catch (Exception e) {
 					e.printStackTrace();
